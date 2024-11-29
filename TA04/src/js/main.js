@@ -1,51 +1,8 @@
-// Función para validar el formulario
-function validateForm(event) {
-  // Prevenir el envío del formulario por defecto
-  event.preventDefault();
-
-  // Obtener los valores de los campos del formulario
-  const name = document.getElementById('name').value;
-  const surname = document.getElementById('surname').value;
-  const phonePrefix = document.getElementById('phonePrefix').value;
-  const phone = document.getElementById('phone').value;
-  const email = document.getElementById('email').value;
-  const gender = document.querySelector('input[name="gender"]:checked').value;
-  const comment = document.getElementById('comment').value;
-
-  // Validar los campos
-  if (name.trim() === '' || surname.trim() === '' || phone.trim() === '' || email.trim() === '' || gender.trim() === '') {
-    // Mostrar un mensaje de error si algún campo está vacío
-    showFormMessage('Por favor, completa todos los campos.', false);
-    return false;
-  }
-
-  // Si todo está válido, mostrar el mensaje de éxito y redirigir a la página index.html
-  showFormMessage('¡Formulario enviado correctamente!', true);
-  setTimeout(() => {
-    window.location.href = '../index.html';
-  }, 2000); // Esperar 2 segundos antes de redirigir
-
-  return true;
-}
-
-// Función para mostrar el mensaje en el formulario
-function showFormMessage(message, isSuccess) {
-  const formMessage = document.getElementById('formMessage');
-  formMessage.innerHTML = message;
-  formMessage.classList.add(isSuccess ? 'form-message-success' : 'form-message-error');
-  formMessage.style.display = 'block';
-
-  setTimeout(() => {
-    formMessage.style.display = 'none';
-    formMessage.classList.remove('form-message-success', 'form-message-error');
-  }, 3000); // Ocultar el mensaje después de 3 segundos
-}
-
-// Función para agregar animación a los proyectos en la página index.html
 function animateProjects() {
   const projectCards = document.querySelectorAll('.project-card');
 
   projectCards.forEach((card, index) => {
+    // Aplicar animación al contenedor completo del proyecto
     card.style.opacity = '0';
     card.style.transform = 'translateY(50px)';
 
@@ -54,6 +11,19 @@ function animateProjects() {
       card.style.transform = 'translateY(0)';
       card.style.transition = 'all 0.5s ease';
     }, index * 200);
+
+    // Animación adicional para la imagen si existe
+    const projectImage = card.querySelector('img');
+    if (projectImage) {
+      projectImage.style.opacity = '0';
+      projectImage.style.transform = 'scale(0.9)';
+
+      setTimeout(() => {
+        projectImage.style.opacity = '1';
+        projectImage.style.transform = 'scale(1)';
+        projectImage.style.transition = 'all 0.5s ease';
+      }, index * 200);
+    }
   });
 }
 
@@ -146,13 +116,69 @@ function animateProjectPage() {
   }, 300);
 }
 
+// Función para agregar animación a los elementos de la página de lista de proyectos
+function animateProjectListPage() {
+  const projectListItems = document.querySelectorAll('.project-list-item');
+
+  projectListItems.forEach((item, index) => {
+    item.style.opacity = '0';
+    item.style.transform = 'translateX(-50px)';
+
+    setTimeout(() => {
+      item.style.opacity = '1';
+      item.style.transform = 'translateX(0)';
+      item.style.transition = 'all 0.5s ease';
+    }, index * 200);
+  });
+}
+
 // Ejecutar las funciones de animación y interacción según la página actual
 if (window.location.pathname.includes('index.html')) {
+  showClock();
   animateProjects();
   animateProfile();
   animateFooterLinks();
 } else if (window.location.pathname.includes('formulari.html')) {
-  // No hay animaciones específicas para la página del formulario
+  showClock();
 } else if (window.location.pathname.includes('projecte.html')) {
+  showClock();
   animateProjectPage();
+} else if (window.location.pathname.includes('llistat.html')) {
+  showClock();
+  animateProjectListPage();
+}
+
+function animateProfile() {
+  const profileImage = document.querySelector('.profile-image img');
+  const profileTitle = document.querySelector('.personal-description h2');
+  const profileDescription = document.querySelector('.personal-description p');
+
+  // Reset initial state
+  profileImage.style.opacity = '0';
+  profileImage.style.transform = 'scale(0.7) rotate(-15deg)';
+
+  profileTitle.style.opacity = '0';
+  profileTitle.style.transform = 'translateY(30px)';
+
+  profileDescription.style.opacity = '0';
+  profileDescription.style.transform = 'translateY(40px)';
+
+  // Animate with staggered effect
+  setTimeout(() => {
+    profileImage.style.opacity = '1';
+    profileImage.style.transform = 'scale(1) rotate(0deg)';
+    profileImage.style.transition = 'all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+
+    setTimeout(() => {
+      profileTitle.style.opacity = '1';
+      profileTitle.style.transform = 'translateY(0)';
+      profileTitle.style.transition = 'all 0.6s ease';
+
+      setTimeout(() => {
+        profileDescription.style.opacity = '1';
+        profileDescription.style.transform = 'translateY(0)';
+        profileDescription.style.transition = 'all 0.6s ease';
+      }, 200);
+    }, 300);
+  }, 300);
 }
