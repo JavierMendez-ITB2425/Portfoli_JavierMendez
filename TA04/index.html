@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio</title>
+    <link rel="stylesheet" href="./src/css/styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="./assets/icons/logo.png" alt="Logo" class="logo">
+            </div>
+            <div class="title-container">
+                <h1 class="main-title">Titulo</h1>
+                <p class="author-name">Nombre Autor</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="projects-container">
+            <!-- Proyecto 1 -->
+            <article class="project-card">
+                <div class="project-image">P1</div>
+                <div class="project-info">
+                    <h2>Título</h2>
+                    <p>Descripción</p>
+                    <a href="Pagines/Projecte1.html" class="read-more">Leer más</a>
+                </div>
+            </article>
+
+            <!-- Proyecto 2 -->
+            <article class="project-card">
+                <div class="project-image">P2</div>
+                <div class="project-info">
+                    <h2>Título</h2>
+                    <p>Descripción</p>
+                    <a href="Pagines/Projecte2.html" class="read-more">Leer más</a>
+                </div>
+            </article>
+        </div>
+
+        <section class="projects-list">
+            <a href="Pagines/Llistat.html" class="list-button">Listado Proyectos</a>
+        </section>
+
+        <section class="personal-description">
+            <div class="profile-image">
+                <img src="./assets/Imatges/x.png" alt="Perfil">
+            </div>
+            <h2>Descripción Personal</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+        </section>
+
+        <footer class="contact-footer">
+            <div class="personal-info">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <span class="icon">📱</span>
+                        <a href="tel:+34123456789">34 123 456 789</a>
+                    </div>
+                    <div class="info-item">
+                        <span class="icon">✉️</span>
+                        <a href="mailto:ejemplo@correo.com">ejemplo@correo.com</a>
+                    </div>
+                </div>
+                <div class="social-info">
+                    <div class="info-item">
+                        <span class="icon">📸</span>
+                        <a href="link instagram personal">@instagram_usuario</a>
+                    </div>
+                    <div class="info-item">
+                        <span class="icon">𝕏</span>
+                        <a href="Link usuario X">x_usuario</a>
+                    </div>
+                    <div class="info-item">
+                        <span class="icon">🔗</span>
+                        <a href="Link de linkedin">linkedin:usuaio</a>
+                    </div>
+                    <div class="info-item">
+                        <span class="icon">🐙</span>
+                        <a href="Link de github">github_usuario</a>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-form">
+                <a href="Pagines/formulari.html" class="contact-button">Form. de Contacto</a>
+            </div>
+        </footer>
+    </main>
+
+    <div id="successMessage" class="form-message form-message-success" style="display: none;">
+        ¡Formulario enviado correctamente!
+    </div>
+
+    <script src="./src/js/main.js"></script>
+</body>
+</html>

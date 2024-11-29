@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="../src/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="home-icon">X</a>
+        <div id="formMessage" class="form-message"></div>
+        <form id="myForm" onsubmit="return validateForm(event)">
+            <div class="form-group">
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" pattern="[a-zA-Z]*" required>
+            </div>
+            <div class="form-group">
+                <label for="surname">Apellidos:</label>
+                <input type="text" id="surname" name="surname" pattern="^[a-zA-Z]+(\s[a-zA-Z]+){0,3}$" title="Máximo 4 palabras" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Teléfono:</label>
+                <div class="phone-input">
+                    <select id="phonePrefix" name="phonePrefix">
+                        <option value="+34">+34</option>
+                        <option value="+256">+256</option>
+                        <!-- Agrega más prefijos de país si es necesario -->
+                    </select>
+                    <input type="tel" id="phone" name="phone" pattern="[0-9]{9}" maxlength="9" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" required>
+            </div>
+            <div class="form-group">
+                <label>Género:</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="gender" value="masculino" required> Masculino</label>
+                    <label><input type="radio" name="gender" value="femenino" required> Femenino</label>
+                    <label><input type="radio" name="gender" value="otro" required> Prefiero no decirlo</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="comment">Comentario (máx. 200 caracteres):</label>
+                <textarea id="comment" name="comment" maxlength="200"></textarea>
+            </div>
+            <div class="form-actions">
+                <button type="submit" id="submitBtn" class="btn-submit">Enviar</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="../src/js/main.js"></script>
+</body>
+</html>
