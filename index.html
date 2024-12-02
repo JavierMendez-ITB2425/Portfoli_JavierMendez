@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio</title>
+    <link rel="stylesheet" href="./src/css/styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="title-container">
+                <h1 class="main-title">Portfolio</h1>
+                <p class="author-name">Javier Mendez</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="projects-container">
+            <!-- Proyecto 1 -->
+            <article class="project-card">
+                <img src="./assets/imatges/Web_empresarial.png" alt="Página web empresarial" class="project-image">
+                <div class="project-info">
+                    <h2>Página web empresarial</h2>
+                    <p style="color: #828282;">Página web creada para una empresa de renombre, conocida como Apple</p>
+                    <a href="Pagines/Projecte1.html" class="read-more">Leer más</a>
+                </div>
+            </article>
+
+            <!-- Proyecto 2 -->
+            <article class="project-card">
+                <img src="./assets/imatges/dron.png" alt="Página web empresarial" class="project-image">
+                <div class="project-info">
+                    <h2>Creación de un dron</h2>
+                    <p style="color: #828282;">Proyecto de creación de un dron</p>
+                    <a href="Pagines/Projecte2.html" class="read-more">Leer más</a>
+                </div>
+            </article>
+        </div>
+
+        <section class="projects-list">
+            <a href="Pagines/Llistat.html" class="list-button">Listado Proyectos</a>
+        </section>
+
+        <section class="personal-description">
+            <div class="profile-image">
+                <img src="./assets/imatges/Javi.png" alt="Perfil">
+            </div>
+            <h2>Descripción Personal</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+        </section>
+
+        <footer class="contact-footer">
+            <div class="personal-info">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <span class="icon">📱</span>
+                        <a href="tel:+34 623253833">34 623253833</a>
+                    </div>
+                    <div class="info-item">
+                        <span class="icon">✉️</span>
+                        <a href="mailto:ajmp1706@gmail.com">ajmp1706@gmail.com</a>
+                    </div>
+                </div>
+                <div class="social-info">
+                    <div class="info-item">
+                        <span class="icon">📸</span>
+                        <a href="https://www.instagram.com/javielson_/">@javielson_</a>
+                    </div>
+                    <div class="info-item">
+                        <span class="icon">🐙</span>
+                        <a href="https://github.com/JavierMendez-ITB2425">JavierMendez-ITB2425</a>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-form">
+                <a href="Pagines/formulari.html" class="contact-button">Form. de Contacto</a>
+            </div>
+        </footer>
+    </main>
+
+    <div id="successMessage" class="form-message form-message-success" style="display: none;">
+        ¡Formulario enviado correctamente!
+    </div>
+
+    <script src="./src/js/main.js"></script>
+</body>
+</html>
